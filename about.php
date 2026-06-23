@@ -26,9 +26,9 @@
 <!-- Page Header End -->
 
 <!-- Scrolling Ticker Section Start -->
-<div class="our-scrolling-ticker subpages-scrolling-ticker">
+<!-- <div class="our-scrolling-ticker subpages-scrolling-ticker"> -->
     <!-- Scrolling Ticker Start -->
-    <div class="scrolling-ticker-box">
+    <!-- <div class="scrolling-ticker-box">
         <div class="scrolling-content">
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-1.svg" alt=""></span>
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-2.svg" alt=""></span>
@@ -42,9 +42,9 @@
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-4.svg" alt=""></span>
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-5.svg" alt=""></span>
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-6.svg" alt=""></span>
-        </div>
+        </div> -->
 
-        <div class="scrolling-content">
+        <!-- <div class="scrolling-content">
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-1.svg" alt=""></span>
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-2.svg" alt=""></span>
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-3.svg" alt=""></span>
@@ -57,9 +57,9 @@
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-4.svg" alt=""></span>
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-5.svg" alt=""></span>
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-6.svg" alt=""></span>
-        </div>
-    </div>
-</div>
+        </div> -->
+    <!-- </div> -->
+<!-- </div> -->
 <!-- Scrolling Ticker Section End -->
 
 <!-- About Us Section Start -->
@@ -105,7 +105,7 @@
                         <!-- About Us Body End -->
 
                         <!-- About Us Footer Start -->
-                        <div class="about-us-footer wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="about-us-footer wow fadeInUp d-flex justify-content-end" data-wow-delay="0.4s">
                             <!-- About Us Button Start -->
                             <div class="about-us-btn">
                                 <a href="<?php echo BASE_URL; ?>/index.php?page=about" class="btn-default">more about</a>
@@ -113,22 +113,22 @@
                             <!-- About Us Button End -->
 
                             <!-- About Author Info Start -->
-                            <div class="about-author-info">
+                            <!-- <div class="about-author-info"> -->
                                 <!-- About Author Image Start -->
-                                <div class="about-author-image">
+                                <!-- <div class="about-author-image">
                                     <figure class="image-anime">
                                         <img src="<?php echo BASE_URL; ?>/assets/images/author-image.jpg" alt="">
                                     </figure>
-                                </div>
+                                </div> -->
                                 <!-- About Author Image End -->
 
                                 <!-- About Author Content Start -->
-                                <div class="about-author-content">
+                                <!-- <div class="about-author-content">
                                     <h3>WatNidea Team</h3>
                                     <p>digital strategy experts</p>
-                                </div>
+                                </div> -->
                                 <!-- About Author Content End -->
-                            </div>
+                            <!-- </div> -->
                             <!-- About Author Info End -->
                         </div>
                         <!-- About Us Footer End -->
@@ -790,7 +790,7 @@
                 <!-- Section Title Start -->
                 <div class="section-title">
                     <h3 class="wow fadeInUp">testimonials</h3>
-                    <h2 class="text-anime-style-2" data-cursor="-opaque">What <span>clients</span> are saying</h2>
+                    <h2 class="text-anime-style-2" data-cursor="-opaque">What <span>clients</span> say</h2>
                 </div>
                 <!-- Section Title End -->
             </div>
@@ -815,14 +815,14 @@
                                 <div class="testimonial-item">
                                     <div class="testimonial-header">
                                         <div class="testimonial-content">
-                                            <p>"Working with this team has a game-changer for our brand engagement skyrocketed, we've seen a noticeable increase in sales."</p>
+                                            <p>“watNidea felt like a true partner. They helped us with branding, website development, and online marketing in a way that actually made sense for our business.”</p>
                                         </div>
                                         <div class="testimonial-author">
-                                            <div class="author-image">
+                                            <!-- <div class="author-image">
                                                 <figure class="image-anime">
                                                     <img src="<?php echo BASE_URL; ?>/assets/images/author-1.jpg" alt="">
                                                 </figure>
-                                            </div>
+                                            </div> -->
                                             <div class="author-content">
                                                 <h3>arlene mcCoy</h3>
                                                 <p>Co Founder</p>
@@ -848,16 +848,16 @@
                                 <div class="testimonial-item">
                                     <div class="testimonial-header">
                                         <div class="testimonial-content">
-                                            <p>"Working with this team has a game-changer for our brand engagement skyrocketed, we've seen a noticeable increase in sales."</p>
+                                            <p>"We needed a digital marketing agency that could handle everything from SEO to social media. watNidea delivered with clarity and creativity.”</p>
                                         </div>
                                         <div class="testimonial-author">
-                                            <div class="author-image">
+                                            <!-- <div class="author-image">
                                                 <figure class="image-anime">
                                                     <img src="<?php echo BASE_URL; ?>/assets/images/author-2.jpg" alt="">
                                                 </figure>
-                                            </div>
+                                            </div> -->
                                             <div class="author-content">
-                                                <h3>arlene mcCoy</h3>
+                                                <h3>Oliver James</h3>
                                                 <p>Co Founder</p>
                                             </div>
                                         </div>
@@ -881,14 +881,14 @@
                                 <div class="testimonial-item">
                                     <div class="testimonial-header">
                                         <div class="testimonial-content">
-                                            <p>"Working with this team has a game-changer for our brand engagement skyrocketed, we've seen a noticeable increase in sales."</p>
+                                            <p>“The team understood our brand right away. Their brand identity work and content marketing made a real difference in how people see our company.”</p>
                                         </div>
                                         <div class="testimonial-author">
-                                            <div class="author-image">
+                                            <!-- <div class="author-image">
                                                 <figure class="image-anime">
                                                     <img src="<?php echo BASE_URL; ?>/assets/images/author-3.jpg" alt="">
                                                 </figure>
-                                            </div>
+                                            </div> -->
                                             <div class="author-content">
                                                 <h3>arlene mcCoy</h3>
                                                 <p>Co Founder</p>
@@ -917,11 +917,11 @@
                                             <p>"Working with this team has a game-changer for our brand engagement skyrocketed, we've seen a noticeable increase in sales."</p>
                                         </div>
                                         <div class="testimonial-author">
-                                            <div class="author-image">
+                                            <!-- <div class="author-image">
                                                 <figure class="image-anime">
                                                     <img src="<?php echo BASE_URL; ?>/assets/images/author-4.jpg" alt="">
                                                 </figure>
-                                            </div>
+                                            </div> -->
                                             <div class="author-content">
                                                 <h3>arlene mcCoy</h3>
                                                 <p>Co Founder</p>
@@ -1017,12 +1017,12 @@
                     <div class="accordion-item wow fadeInUp">
                         <h2 class="accordion-header" id="heading1">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                What is digital marketing?
+                                What does watNidea do?
                             </button>
                         </h2>
                         <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#faqaccordion">
                             <div class="accordion-body">
-                                <p>We specialize in major platforms like Facebook, Instagram, Twitter, LinkedIn Pinterest, tailoring strategy to each platform's unique audience.</p>
+                                <p>WatNidea is a full-service digital marketing agency offering branding, SEO, website development, social media marketing, content marketing, video production, video editing, PPC, and rebranding services.</p>
                             </div>
                         </div>
                     </div>
@@ -1031,13 +1031,13 @@
                     <!-- FAQ Item Start -->
                     <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
                         <h2 class="accordion-header" id="heading2">
-                            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                Which platforms do you specialize in?
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                Do you work as a branding agency and marketing agency?
                             </button>
                         </h2>
                         <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="heading2" data-bs-parent="#faqaccordion">
                             <div class="accordion-body">
-                                <p>We specialize in major platforms like Facebook, Instagram, Twitter, LinkedIn Pinterest, tailoring strategy to each platform's unique audience.</p>
+                                <p>Yes — we act as both, helping with strategy, identity, campaigns, and growth.</p>
                             </div>
                         </div>
                     </div>
@@ -1047,12 +1047,13 @@
                     <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
                         <h2 class="accordion-header" id="heading3">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                How long before I see results?
+                                Can you help with website development and web design?
+
                             </button>
                         </h2>
                         <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#faqaccordion">
                             <div class="accordion-body">
-                                <p>We specialize in major platforms like Facebook, Instagram, Twitter, LinkedIn Pinterest, tailoring strategy to each platform's unique audience.</p>
+                                <p>Absolutely. We build modern, responsive, conversion-focused websites.</p>
                             </div>
                         </div>
                     </div>
@@ -1062,12 +1063,12 @@
                     <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
                         <h2 class="accordion-header" id="heading4">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                Do you offer content creation?
+                                Do you provide Google Ads and PPC support?
                             </button>
                         </h2>
                         <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#faqaccordion">
                             <div class="accordion-body">
-                                <p>We specialize in major platforms like Facebook, Instagram, Twitter, LinkedIn Pinterest, tailoring strategy to each platform's unique audience.</p>
+                                <p>Yes. We handle Google Ads management, PPC campaigns, and performance marketing for targeted visibility and leads.</p>
                             </div>
                         </div>
                     </div>
@@ -1077,12 +1078,13 @@
                     <div class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
                         <h2 class="accordion-header" id="heading5">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                What industries do you work with?
+                                Can you support content and video as well?
+
                             </button>
                         </h2>
                         <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#faqaccordion">
                             <div class="accordion-body">
-                                <p>We specialize in major platforms like Facebook, Instagram, Twitter, LinkedIn Pinterest, tailoring strategy to each platform's unique audience.</p>
+                                <p>Yes — we offer content marketing, video production, and video editing services to help your brand communicate better and build trust.</p>
                             </div>
                         </div>
                     </div>

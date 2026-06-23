@@ -1,5 +1,5 @@
 <?php
-define('BASE_URL', 'https://watnidea.com');
+define('BASE_URL', 'http://localhost:8000');
 define('SITE_NAME', 'WatNidea');
 define('SITE_TAGLINE', 'Where Ideas Turn Into Impact');
 define('SITE_DESCRIPTION', 'WatNidea is a digital marketing agency focused on social growth, content creation, lead generation, and brand visibility.');

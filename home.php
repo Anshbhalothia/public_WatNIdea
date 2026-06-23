@@ -3,88 +3,299 @@
 
 <!-- Header End -->
 
-<!-- Hero Section Start-->
-<div class="hero">
-    <!-- Video Start -->
-    <div class="hero-bg-video">
-        <!-- Selfhosted Video Start -->
-        <!-- <video autoplay muted loop id="myVideo"><source src="<?php echo BASE_URL; ?>/assets/images/hero-bg-video.mp4" type="video/mp4"></video> -->
-        <video autoplay muted loop id="myVideo">
-            <source src="https://demo.awaikenthemes.com/assets/videos/artistic-social-media-video.mp4" type="video/mp4">
+<!-- ================= HERO SLIDER START ================= -->
+<style>
+/* Reset theme interference */
+.hero-wrapper::before,
+.hero-wrapper::after,
+.hero-slider::before,
+.hero-slider::after,
+.hero-track::before,
+.hero-track::after,
+.hero-slide::before,
+.hero-slide::after,
+.hero::before,
+.hero::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Wrapper */
+.hero-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+/* VIDEO BACKGROUND */
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Dark overlay */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+/* Slider */
+.hero-slider {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.hero-track {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.hero-slide {
+    min-width: 100%;
+}
+
+/* Hero content */
+.hero {
+    padding: 100px 0;
+    color: #fff !important;
+    position: relative;
+    z-index: 3;
+}
+
+.hero .row {
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.3;
+    color: #fff !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+.hero h1 span {
+    color: #ba2c27 !important;
+}
+
+.hero p {
+    margin: 20px 0;
+    color: #ddd !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff !important;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+.btn-hero:hover {
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff !important;
+}
+
+/* Hero image */
+.hero-img {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Dots */
+.slider-dots {
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 3;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 5px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: #ba2c27;
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+    .hero {
+        text-align: center;
+        padding: 60px 0;
+    }
+    .hero-img {
+        margin-top: 30px;
+    }
+}
+</style>
+
+<div class="hero-wrapper">
+
+    <!-- VIDEO BACKGROUND -->
+    <div class="video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="<?php echo BASE_URL; ?>/assets/images/hero-bg.mp4" type="video/mp4">
         </video>
-        <!-- Selfhosted Video End -->
-
-        <!-- Youtube Video Start -->
-        <!-- <div id="herovideo" class="player" data-property="{videoURL:'74DWwSxsVSs',containment:'.hero-video', showControls:false, autoPlay:true, loop:true, vol:0, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}"></div> -->
-        <!-- Youtube Video End -->
     </div>
-    <!-- Video End -->
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <!-- Hero Content Start -->
-                <div class="hero-content">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <h1 class="text-anime-style-2" data-cursor="-opaque">Grow your brand with <span>WatNidea</span></h1>
-                        <p class="wow fadeInUp">WatNidea is a digital marketing agency that turns ideas into impact through strategy, content creation, reels, paid growth, and conversion-focused campaigns.</p>
-                    </div>
-                    <!-- Section Title End -->
 
-                    <!-- Hero Button Start -->
-                    <div class="hero-btn wow fadeInUp" data-wow-delay="0.25s">
-                        <a href="<?php echo BASE_URL; ?>/index.php?page=contact" class="btn-default">get started</a>
-                    </div>
-                    <!-- Hero Button End -->
-                </div>
-                <!-- Hero Content End -->
-            </div>
+    <!-- DARK OVERLAY -->
+    <div class="video-overlay"></div>
 
-            <div class="col-lg-6">
-                <!-- Hero Images Start -->
-                <div class="hero-images">
-                    <!-- Hero Image Start -->
-                    <div class="hero-image">
-                        <figure>
-                            <img src="<?php echo BASE_URL; ?>/assets/images/hero-image.png" alt="">
-                        </figure>
+    <!-- SLIDER -->
+    <div class="hero-slider">
+        <div class="hero-track">
 
-                        <!-- Hero Image Icon Box Start -->
-                        <div class="hero-img-icon-box">
-                            <div class="icon-hero-img-1">
-                                <figure>
-                                    <img src="<?php echo BASE_URL; ?>/assets/images/icon-hero-img-1.svg" alt="">
-                                </figure>
-                            </div>
-
-                            <div class="icon-hero-img-2">
-                                <figure>
-                                    <img src="<?php echo BASE_URL; ?>/assets/images/icon-hero-img-2.svg" alt="">
-                                </figure>
-                            </div>
+            <!-- Slide 1 -->
+            <div class="hero-slide">
+                <div class="hero container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h1>Grow your brand with <span>WatNidea</span></h1>
+                            <p>Digital marketing agency that turns ideas into impact.</p>
+                            <a href="<?php echo BASE_URL; ?>/index.php?page=contact" class="btn-hero">
+                                Get Started
+                            </a>
                         </div>
-                        <!-- Hero Image Icon Box End -->
-                    </div>
-                    <!-- Hero Image End -->
-
-                    <!-- Satisficed Client Box Start -->
-                    <div class="satisficed-client-box">
-                        <div class="icon-box">
-                            <img src="<?php echo BASE_URL; ?>/assets/images/icon-satisficed-client.svg" alt="">
-                        </div>
-                        <div class="satisficed-client-content">
-                            <h3><span class="counter">2500</span>+</h3>
-                            <p>brands served</p>
+                        <div class="col-lg-6 hero-img">
+                            <img src="<?php echo BASE_URL; ?>/assets/images/hero-image.png" alt="Hero Image">
                         </div>
                     </div>
-                    <!-- Satisficed Client Box End -->
                 </div>
             </div>
-            <!-- Hero Images End -->
+
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+                <div class="hero container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h1>Boost your <span>Business</span></h1>
+                            <p>High converting ad campaigns that drive results.</p>
+                            <a href="<?php echo BASE_URL; ?>/index.php?page=contact" class="btn-hero">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="col-lg-6 hero-img">
+                            <img src="<?php echo BASE_URL; ?>/assets/images/hero-image.png" alt="Hero Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+                <div class="hero container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h1>Scale with <span>Strategy</span></h1>
+                            <p>Grow faster with SEO & performance marketing.</p>
+                            <a href="<?php echo BASE_URL; ?>/index.php?page=contact" class="btn-hero">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="col-lg-6 hero-img">
+                            <img src="<?php echo BASE_URL; ?>/assets/images/hero-image.png" alt="Hero Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    <!-- DOTS -->
+    <div class="slider-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+    </div>
+
 </div>
-<!-- Hero Section End-->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const track = document.querySelector(".hero-track");
+    const dots = document.querySelectorAll(".dot");
+
+    let index = 0;
+    let interval;
+
+    function updateSlider() {
+        track.style.transform = "translateX(" + (-index * 100) + "%)";
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+    }
+
+    function startAutoSlide() {
+        interval = setInterval(() => {
+            index = (index + 1) % dots.length;
+            updateSlider();
+        }, 6000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(interval);
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener("click", function () {
+            stopAutoSlide();
+            index = parseInt(this.dataset.index);
+            updateSlider();
+            startAutoSlide();
+        });
+    });
+
+    startAutoSlide();
+
+});
+</script>
+
+<!-- ================= HERO SLIDER END ================= -->
 
 <!-- Scrolling Ticker Section Start -->
 <div class="our-scrolling-ticker">
@@ -138,17 +349,18 @@
                                 <img src="<?php echo BASE_URL; ?>/assets/images/about-us-image.jpg" alt="">
                             </figure>
                         </div>
+
                         <!-- About Us Image End -->
 
                         <!-- About Experience Box Start -->
-                        <div class="about-experience-box">
+                        <!-- <div class="about-experience-box">
                             <div class="about-experience-counter">
                                 <h2><span class="counter">25</span>+</h2>
                             </div>
                             <div class="about-experience-content wow fadeInUp">
                                 <p>Creative execution <span>Digital marketing</span></p>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- About Experience Box End -->
                     </div>
                     <!-- About Us Images End -->
@@ -169,32 +381,11 @@
                         <!-- About Us Body End -->
 
                         <!-- About Us Footer Start -->
-                        <div class="about-us-footer wow fadeInUp" data-wow-delay="0.4s">
-                            <!-- About Us Button Start -->
-                            <div class="about-us-btn">
-                                <a href="<?php echo BASE_URL; ?>/index.php?page=about" class="btn-default">more about</a>
-                            </div>
-                            <!-- About Us Button End -->
-
-                            <!-- About Author Info Start -->
-                            <div class="about-author-info">
-                                <!-- About Author Image Start -->
-                                <div class="about-author-image">
-                                    <figure class="image-anime">
-                                        <img src="<?php echo BASE_URL; ?>/assets/images/author-image.jpg" alt="">
-                                    </figure>
+                        <div class="about-us-footer wow fadeInUp d-flex justify-content-end" data-wow-delay="0.4s">
+                                <div class="about-us-btn">
+                                    <a href="<?php echo BASE_URL; ?>/index.php?page=about" class="btn-default">more about</a>
                                 </div>
-                                <!-- About Author Image End -->
-
-                                <!-- About Author Content Start -->
-                                <div class="about-author-content">
-                                    <h3>WatNidea Team</h3>
-                                    <p>digital strategy experts</p>
-                                </div>
-                                <!-- About Author Content End -->
                             </div>
-                            <!-- About Author Info End -->
-                        </div>
                         <!-- About Us Footer End -->
 
                         <!-- About Us List Start -->
@@ -243,6 +434,26 @@
 </div>
 <!-- About Us Section End -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Our Services Section Start -->
 <div class="our-services">
     <div class="container">
@@ -266,17 +477,9 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-4">
-                <!-- Our Service Image Start -->
-                <div class="our-service-image">
-                    <figure class="image-anime reveal">
-                        <img src="<?php echo BASE_URL; ?>/assets/images/services-image.jpg" alt="">
-                    </figure>
-                </div>
-                <!-- Our Service Image End -->
-            </div>
+           
 
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <!-- Service Boxes Start -->
                 <div class="service-boxes">
                     <!-- Service Item Start -->
@@ -285,8 +488,8 @@
                             <img src="<?php echo BASE_URL; ?>/assets/images/icon-service-1.svg" alt="">
                         </div>
                         <div class="service-item-content">
-                            <h3>social media strategy development</h3>
-                            <p>Content calendars, campaign direction, audience targeting, and growth plans tailored to your market.</p>
+                            <h3>Brand Strategy</h3>
+                            <p>We help you define your positioning, messaging, and direction so your brand stands out with purpose.</p>
                             <a href="<?php echo BASE_URL; ?>/index.php?page=services" class="readmore-btn">read more</a>
                         </div>
                     </div>
@@ -298,8 +501,8 @@
                             <img src="<?php echo BASE_URL; ?>/assets/images/icon-service-2.svg" alt="">
                         </div>
                         <div class="service-item-content">
-                            <h3>Social media account management</h3>
-                            <p>Consistent publishing, community replies, DM handling, and account optimization for daily momentum.</p>
+                            <h3>Brand Identity</h3>
+                            <p> We create logos, colors, typography, and a complete visual system that truly represents your business.</p>
                             <a href="<?php echo BASE_URL; ?>/index.php?page=services" class="readmore-btn">read more</a>
                         </div>
                     </div>
@@ -311,8 +514,8 @@
                             <img src="<?php echo BASE_URL; ?>/assets/images/icon-service-3.svg" alt="">
                         </div>
                         <div class="service-item-content">
-                            <h3>Social media analytics and reporting</h3>
-                            <p>Clear reporting on reach, engagement, content performance, and lead quality so decisions stay data-led.</p>
+                            <h3>SEO Services</h3>
+                            <p>We improve your search rankings and bring steady organic traffic that actually grows your business.</p>
                             <a href="<?php echo BASE_URL; ?>/index.php?page=services" class="readmore-btn">read more</a>
                         </div>
                     </div>
@@ -324,12 +527,84 @@
                             <img src="<?php echo BASE_URL; ?>/assets/images/icon-service-4.svg" alt="">
                         </div>
                         <div class="service-item-content">
-                            <h3>Hashtag and keyword optimization</h3>
-                            <p>Search-friendly captions, hashtags, and content positioning built to improve discoverability.</p>
+                            <h3>Digital Marketing</h3>
+                            <p>We run targeted campaigns across Google Ads and other platforms to deliver measurable results and leads.</p>
                             <a href="<?php echo BASE_URL; ?>/index.php?page=services" class="readmore-btn">read more</a>
                         </div>
                     </div>
                     <!-- Service Item End -->
+                     <!-- Service Item Start -->
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="icon-box">
+                            <img src="<?php echo BASE_URL; ?>/assets/images/icon-service-2.svg" alt="">
+                        </div>
+                        <div class="service-item-content">
+                            <h3>Social Media Marketing </h3>
+                            <p>We build strategies, create content, and grow your audience with consistent and engaging social presence.</p>
+                            <a href="<?php echo BASE_URL; ?>/index.php?page=services" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+                     <!-- Service Item Start -->
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="icon-box">
+                            <img src="<?php echo BASE_URL; ?>/assets/images/icon-service-2.svg" alt="">
+                        </div>
+                        <div class="service-item-content">
+                            <h3>Video Shooting & Editing</h3>
+                            <p>We shoot and edit professional brand films, reels, testimonials, and promotional videos for your business.</p>
+
+                            <a href="<?php echo BASE_URL; ?>/index.php?page=services" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+
+
+
+
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="icon-box">
+                            <img src="<?php echo BASE_URL; ?>/assets/images/icon-service-3.svg" alt="">
+                        </div>
+                        <div class="service-item-content">
+                            <h3>Content Marketing</h3>
+                            <p>We create useful blogs, articles, and thought leadership content that builds trust and authority.</p>
+                            <a href="<?php echo BASE_URL; ?>/index.php?page=services" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+
+
+
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="icon-box">
+                            <img src="<?php echo BASE_URL; ?>/assets/images/icon-service-3.svg" alt="">
+                        </div>
+                        <div class="service-item-content">
+                            <h3>Website Development</h3>
+                            <p>We build fast, modern, and conversion-focused websites that look great and perform even better.</p>
+                            <a href="<?php echo BASE_URL; ?>/index.php?page=services" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+
+
+
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="icon-box">
+                            <img src="<?php echo BASE_URL; ?>/assets/images/icon-service-3.svg" alt="">
+                        </div>
+                        <div class="service-item-content">
+                            <h3>Rebranding </h3>
+                            <p>We completely refresh your brand look, message, and identity to match where your business is heading.</p>
+                            <a href="<?php echo BASE_URL; ?>/index.php?page=services" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                    <!-- Service Item End -->
+
+
+
+
                 </div>
                 <!-- Service Boxes End -->
             </div>
@@ -337,7 +612,7 @@
             <div class="col-lg-12">
                 <!-- Service Footer Start -->
                 <div class="service-footer wow fadeInUp" data-wow-delay="0.8s">
-                    <p><span>Free</span> Let’s make something great together. <a href="<?php echo BASE_URL; ?>/index.php?page=contact">Get Free Quote</a></p>
+                    <p> Let’s make something great together. <a href="<?php echo BASE_URL; ?>/index.php?page=contact">Get Free Quote</a></p>
                 </div>
                 <!-- Service Footer End -->
             </div>
@@ -505,27 +780,47 @@
                 <div class="our-feature-content">
                     <!-- Section Title Start -->
                     <div class="section-title">
-                        <h3 class="wow fadeInUp">What We do</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">Powerful <span>features</span> for social growth</h2>
-                        <p class="wow fadeInUp" data-wow-delay="0.2s">Our powerful features are designed to drive social growth by expanding reach, boosting brand awareness. From targeted content strategies to we provide the tools you need to succeed in the dynamic social media landscape.</p>
+                        <h3 class="wow fadeInUp">What We do Best</h3>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque">A Full Service <span>Digital Marketing</span> Agency With a Creative Edge</h2>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">watNidea brings together branding, creativity, and digital marketing under one roof. That means we can handle strategy, identity, campaigns, content, design, and execution without making things complicated.
+                                We’re especially good at helping brands that need clearer positioning, better visuals, and a stronger digital presence. Some clients come for brand strategy. Others need SEO, social media support, or video work. Many need a mix of everything. Whatever your situation, we make sure all the pieces work together.
+                                Our focus is always on clarity, consistency, and results. We want your audience to understand your brand quickly, trust it easily, and remember it longer.
+                                </p>
                     </div>
                     <!-- Section Title End -->
 
                     <!-- Our Feature Body Start -->
-                    <div class="our-feature-body wow fadeInUp" data-wow-delay="0.4s">
+                    <!-- <div class="our-feature-body wow fadeInUp" data-wow-delay="0.4s"> -->
                         <!-- Our Feature Body Item Start -->
-                        <div class="our-feature-body-item">
+                        <!-- <div class="our-feature-body-item">
                             <img src="<?php echo BASE_URL; ?>/assets/images/icon-feature-body.svg" alt="">
                             <h3>Keyword research excellence</h3>
-                        </div>
+                        </div> -->
                         <!-- Our Feature Body Item End -->
 
                         <!-- Our Feature Body Content Start -->
-                        <div class="our-feature-body-content">
+                        <!-- <div class="our-feature-body-content">
                             <p>Our powerful features are designed to drive social growth by.</p>
-                        </div>
+                        </div> -->
                         <!-- Our Feature Body Content End -->
-                    </div>
+
+                        <!-- <div class="our-feature-body-item">
+                            <img src="<?php echo BASE_URL; ?>/assets/images/icon-feature-body.svg" alt="">
+                            <h3>Viral Content Strategy</h3>
+                        </div>
+
+                        <div class="our-feature-body-content">
+                            <p>We create hooks, storytelling formats, and content frameworks designed to maximize reach, saves, and shares.</p>
+                        </div> -->
+
+
+
+
+
+
+
+
+                    <!-- </div> -->
                     <!-- Our Feature Body End -->
 
                     <!-- Our Feature Button Start -->
@@ -569,7 +864,7 @@
                     <!-- Our Feature Img 2 End -->
 
                     <!-- Our Client Box Start -->
-                    <div class="our-client-box">
+                    <!-- <div class="our-client-box">
                         <div class="icon-box">
                             <img src="<?php echo BASE_URL; ?>/assets/images/icon-satisficed-client.svg" alt="">
                         </div>
@@ -578,7 +873,7 @@
                             <h3><span class="counter">2500</span>+</h3>
                             <p>Satisficed client</p>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Our Client Box End -->
                 </div>
                 <!-- Our Feature Images End -->
@@ -699,7 +994,7 @@
                         </ul>
                     </div>
                     <div class="pricing-body mt-auto text-center">
-                        <a href="<?php echo BASE_URL; ?>/index.php?page=contact" class="btn-default w-100 d-block text-center" style="border-radius: 8px;">Get started</a>
+                        <a href="<?php echo BASE_URL; ?>/index.php?page=contact" class="btn-default w-80 d-block text-center" style="border-radius: 8px;">Get started</a>
                     </div>
                 </div>
             </div>
@@ -724,8 +1019,11 @@
                             <li class="mb-3 d-flex"><i class="fa-solid fa-circle-check me-3 mt-1" style="color: #fff;"></i> <span>Weekly Performance Tracking</span></li>
                         </ul>
                     </div>
-                    <div class="pricing-body mt-auto text-center">
+                    <!-- <div class="pricing-body mt-auto text-center">
                         <a href="<?php echo BASE_URL; ?>/index.php?page=contact" class="btn-default btn-highlighted w-100 d-block text-center" style="border-radius: 8px;">Claim your growth</a>
+                    </div> -->
+                    <div class="pricing-body mt-auto text-center">
+                        <a href="<?php echo BASE_URL; ?>/index.php?page=contact" class="btn-default w-80 d-block text-center" style="border-radius: 8px;">Claim your growth</a>
                     </div>
                 </div>
             </div>
@@ -751,7 +1049,7 @@
                         </ul>
                     </div>
                     <div class="pricing-body mt-auto text-center">
-                        <a href="<?php echo BASE_URL; ?>/index.php?page=contact" class="btn-default w-100 d-block text-center" style="border-radius: 8px;">Claim your dominance</a>
+                        <a href="<?php echo BASE_URL; ?>/index.php?page=contact" class="btn-default w-80 d-block text-center" style="border-radius: 8px;">Claim your dominance</a>
                     </div>
                 </div>
             </div>
@@ -771,7 +1069,9 @@
                     <div class="section-title">
                         <h3 class="wow fadeInUp">How it work</h3>
                         <h2 class="text-anime-style-2" data-cursor="-opaque">Step-by-Step guide to social <span>success</span></h2>
-                        <p class="wow fadeInUp" data-wow-delay="0.25s">Our step-by-step guide to social success outlines a clear process to elevate your brand. From strategy creation and content development to campaign execution and performance tracking.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.25s">We follow a structured system to move your brand from low visibility to consistent reach, engagement, and leads.
+From strategy and content creation to execution and scaling, every step is designed to deliver measurable growth.
+Our approach focuses on attracting the right audience, building trust, and converting attention into real business results.</p>
                     </div>
                     <!-- Section Title End -->
 
@@ -801,8 +1101,8 @@
                         </div>
 
                         <div class="how-work-list-content">
-                            <h3>Understand your goals</h3>
-                            <p>Our expert develop customized social media plan designed to achieve your business goals.</p>
+                            <h3>Discover</h3>
+                            <p>We start by learning about your business, your goals, your market, and your audience.</p>
                         </div>
                         <div class="how-work-list-no">
                             <h2>01</h2>
@@ -817,8 +1117,8 @@
                         </div>
 
                         <div class="how-work-list-content">
-                            <h3>Create a strategy</h3>
-                            <p>Our expert develop customized social media plan designed to achieve your business goals.</p>
+                            <h3>Plan </h3>
+                            <p>Then we build a smart approach tailored to what you want to achieve — whether it’s brand strategy, marketing plans, content direction, or a full website and campaign roadmap.</p>
                         </div>
                         <div class="how-work-list-no">
                             <h2>02</h2>
@@ -833,8 +1133,8 @@
                         </div>
 
                         <div class="how-work-list-content">
-                            <h3>Content creation</h3>
-                            <p>Our expert develop customized social media plan designed to achieve your business goals.</p>
+                            <h3> Create</h3>
+                            <p>Once the direction is set, we move into design, writing, development, video production, and campaign execution. Everything supports your brand properly.</p>
                         </div>
                         <div class="how-work-list-no">
                             <h2>03</h2>
@@ -849,8 +1149,8 @@
                         </div>
 
                         <div class="how-work-list-content">
-                            <h3>Campaign launch</h3>
-                            <p>Our expert develop customized social media plan designed to achieve your business goals.</p>
+                            <h3>Launch and Improve</h3>
+                            <p>After launch, we check the results and keep refining. SEO, PPC, content, or performance marketing — we focus on steady, ongoing improvement.</p>
                         </div>
                         <div class="how-work-list-no">
                             <h2>04</h2>
@@ -873,7 +1173,7 @@
                 <!-- Section Title Start -->
                 <div class="section-title">
                     <h3 class="wow fadeInUp">testimonials</h3>
-                    <h2 class="text-anime-style-2" data-cursor="-opaque">What <span>clients</span> are saying</h2>
+                    <h2 class="text-anime-style-2" data-cursor="-opaque">What <span>clients</span> say</h2>
                 </div>
                 <!-- Section Title End -->
             </div>
@@ -898,14 +1198,14 @@
                                 <div class="testimonial-item">
                                     <div class="testimonial-header">
                                         <div class="testimonial-content">
-                                            <p>"Working with this team has a game-changer for our brand engagement skyrocketed, we've seen a noticeable increase in sales."</p>
+                                            <p>“watNidea felt like a true partner. They helped us with branding, website development, and online marketing in a way that actually made sense for our business.”</p>
                                         </div>
                                         <div class="testimonial-author">
-                                            <div class="author-image">
+                                            <!-- <div class="author-image">
                                                 <figure class="image-anime">
                                                     <img src="<?php echo BASE_URL; ?>/assets/images/author-1.jpg" alt="">
                                                 </figure>
-                                            </div>
+                                            </div> -->
                                             <div class="author-content">
                                                 <h3>arlene mcCoy</h3>
                                                 <p>Co Founder</p>
@@ -931,16 +1231,16 @@
                                 <div class="testimonial-item">
                                     <div class="testimonial-header">
                                         <div class="testimonial-content">
-                                            <p>"Working with this team has a game-changer for our brand engagement skyrocketed, we've seen a noticeable increase in sales."</p>
+                                            <p>"We needed a digital marketing agency that could handle everything from SEO to social media. watNidea delivered with clarity and creativity.”</p>
                                         </div>
                                         <div class="testimonial-author">
-                                            <div class="author-image">
+                                            <!-- <div class="author-image">
                                                 <figure class="image-anime">
                                                     <img src="<?php echo BASE_URL; ?>/assets/images/author-2.jpg" alt="">
                                                 </figure>
-                                            </div>
+                                            </div> -->
                                             <div class="author-content">
-                                                <h3>arlene mcCoy</h3>
+                                                <h3>Oliver James</h3>
                                                 <p>Co Founder</p>
                                             </div>
                                         </div>
@@ -964,14 +1264,14 @@
                                 <div class="testimonial-item">
                                     <div class="testimonial-header">
                                         <div class="testimonial-content">
-                                            <p>"Working with this team has a game-changer for our brand engagement skyrocketed, we've seen a noticeable increase in sales."</p>
+                                            <p>“The team understood our brand right away. Their brand identity work and content marketing made a real difference in how people see our company.”</p>
                                         </div>
                                         <div class="testimonial-author">
-                                            <div class="author-image">
+                                            <!-- <div class="author-image">
                                                 <figure class="image-anime">
                                                     <img src="<?php echo BASE_URL; ?>/assets/images/author-3.jpg" alt="">
                                                 </figure>
-                                            </div>
+                                            </div> -->
                                             <div class="author-content">
                                                 <h3>arlene mcCoy</h3>
                                                 <p>Co Founder</p>
@@ -1000,11 +1300,11 @@
                                             <p>"Working with this team has a game-changer for our brand engagement skyrocketed, we've seen a noticeable increase in sales."</p>
                                         </div>
                                         <div class="testimonial-author">
-                                            <div class="author-image">
+                                            <!-- <div class="author-image">
                                                 <figure class="image-anime">
                                                     <img src="<?php echo BASE_URL; ?>/assets/images/author-4.jpg" alt="">
                                                 </figure>
-                                            </div>
+                                            </div> -->
                                             <div class="author-content">
                                                 <h3>arlene mcCoy</h3>
                                                 <p>Co Founder</p>
@@ -1100,12 +1400,12 @@
                     <div class="accordion-item wow fadeInUp">
                         <h2 class="accordion-header" id="heading1">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                What is digital marketing?
+                                What does watNidea do?
                             </button>
                         </h2>
                         <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#faqaccordion">
                             <div class="accordion-body">
-                                <p>We specialize in major platforms like Facebook, Instagram, Twitter, LinkedIn Pinterest, tailoring strategy to each platform's unique audience.</p>
+                                <p>WatNidea is a full-service digital marketing agency offering branding, SEO, website development, social media marketing, content marketing, video production, video editing, PPC, and rebranding services.</p>
                             </div>
                         </div>
                     </div>
@@ -1115,12 +1415,12 @@
                     <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
                         <h2 class="accordion-header" id="heading2">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                Which platforms do you specialize in?
+                                Do you work as a branding agency and marketing agency?
                             </button>
                         </h2>
                         <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="heading2" data-bs-parent="#faqaccordion">
                             <div class="accordion-body">
-                                <p>We specialize in major platforms like Facebook, Instagram, Twitter, LinkedIn Pinterest, tailoring strategy to each platform's unique audience.</p>
+                                <p>Yes — we act as both, helping with strategy, identity, campaigns, and growth.</p>
                             </div>
                         </div>
                     </div>
@@ -1130,12 +1430,13 @@
                     <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
                         <h2 class="accordion-header" id="heading3">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                How long before I see results?
+                                Can you help with website development and web design?
+
                             </button>
                         </h2>
                         <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#faqaccordion">
                             <div class="accordion-body">
-                                <p>We specialize in major platforms like Facebook, Instagram, Twitter, LinkedIn Pinterest, tailoring strategy to each platform's unique audience.</p>
+                                <p>Absolutely. We build modern, responsive, conversion-focused websites.</p>
                             </div>
                         </div>
                     </div>
@@ -1145,12 +1446,12 @@
                     <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
                         <h2 class="accordion-header" id="heading4">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                Do you offer content creation?
+                                Do you provide Google Ads and PPC support?
                             </button>
                         </h2>
                         <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#faqaccordion">
                             <div class="accordion-body">
-                                <p>We specialize in major platforms like Facebook, Instagram, Twitter, LinkedIn Pinterest, tailoring strategy to each platform's unique audience.</p>
+                                <p>Yes. We handle Google Ads management, PPC campaigns, and performance marketing for targeted visibility and leads.</p>
                             </div>
                         </div>
                     </div>
@@ -1160,12 +1461,13 @@
                     <div class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
                         <h2 class="accordion-header" id="heading5">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                What industries do you work with?
+                                Can you support content and video as well?
+
                             </button>
                         </h2>
                         <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#faqaccordion">
                             <div class="accordion-body">
-                                <p>We specialize in major platforms like Facebook, Instagram, Twitter, LinkedIn Pinterest, tailoring strategy to each platform's unique audience.</p>
+                                <p>Yes — we offer content marketing, video production, and video editing services to help your brand communicate better and build trust.</p>
                             </div>
                         </div>
                     </div>

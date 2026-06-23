@@ -1,3 +1,40 @@
+<!-- <?php
+// if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    
+//     if (!empty($_SERVER['HTTP_X_REQUESTED_WITH'])) {
+
+//         header('Content-Type: application/json');
+
+//         error_log(print_r($_POST, true)); 
+
+//         function clean($data) {
+//             return htmlspecialchars(trim($data));
+//         }
+
+//         $fname = clean($_POST['fname'] ?? '');
+//         $email = clean($_POST['email'] ?? '');
+
+//         if (!$fname || !$email) {
+//             echo json_encode([
+//                 "success" => false,
+//                 "message" => "Required fields missing"
+//             ]);
+//             exit;
+//         }
+
+//         echo json_encode([
+//             "success" => true,
+//             "message" => "Form submitted successfully"
+//         ]);
+//         exit;
+//     }
+// }
+?> -->
+
+
+
+
 <?php include __DIR__ . '/includes/header.php'; ?>
 <!-- contact Page Content -->
 
@@ -26,9 +63,9 @@
 <!-- Page Header End -->
 
 <!-- Scrolling Ticker Section Start -->
-<div class="our-scrolling-ticker subpages-scrolling-ticker">
+<!-- <div class="our-scrolling-ticker subpages-scrolling-ticker"> -->
     <!-- Scrolling Ticker Start -->
-    <div class="scrolling-ticker-box">
+    <!-- <div class="scrolling-ticker-box">
         <div class="scrolling-content">
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-1.svg" alt=""></span>
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-2.svg" alt=""></span>
@@ -59,7 +96,7 @@
             <span><img src="<?php echo BASE_URL; ?>/assets/images/client-logo-6.svg" alt=""></span>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Scrolling Ticker Section End -->
 
 <!-- Contact Information Section Start -->
@@ -138,7 +175,7 @@
             <div class="col-lg-12">
                 <!-- Contact Form Start -->
                 <div class="contact-form">
-                    <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.2s">
+                    <form id="contactForm" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.2s">
                         <div class="row">
                             <div class="form-group col-md-6 mb-4">
                                 <input type="text" name="fname" class="form-control" id="fname" placeholder="First name" required>
@@ -165,7 +202,7 @@
                                 <div class="help-block with-errors"></div>
                             </div>
 
-                            <div class="col-md-12">
+                            <div class="col-md-12 ">
                                 <button type="submit" class="btn-default"><span>submit message</span></button>
                                 <div id="msgSubmit" class="h3 hidden"></div>
                             </div>
@@ -174,6 +211,9 @@
                 </div>
                 <!-- Contact Form End -->
             </div>
+
+                    <div id="formResponse"></div>
+
         </div>
     </div>
 </div>
@@ -196,5 +236,34 @@
 <!-- Google Map Section End -->
 
 <!-- Footer Start -->
+ <script>
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const responseBox = document.getElementById("formResponse");
+
+    responseBox.innerHTML = "Sending...";
+
+    try {
+        const res = await fetch("/contact_handler.php", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+            responseBox.innerHTML = "<p style='color:green'>" + data.message + "</p>";
+            this.reset();
+        } else {
+            responseBox.innerHTML = "<p style='color:red'>" + data.message + "</p>";
+        }
+
+    } catch {
+        responseBox.innerHTML = "<p style='color:red'>Server error</p>";
+    }
+});
+</script>
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
